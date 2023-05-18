@@ -9,7 +9,7 @@ pipeline {
                 git "https://github.com/Mbuthiapeter/gallery.git"
             }
         }
-	stage('Installing Dependancies'){
+	stage('Installing Dependencies'){
 		steps{
 		sh 'npm install express nodemon  ejs multer'
 		}
