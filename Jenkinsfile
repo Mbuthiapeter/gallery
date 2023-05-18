@@ -47,6 +47,9 @@ pipeline {
                     """,
                 subject: "Status: 'SUCCESS' -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
                 to: 'mbuthiapetermbuthia@gmail.com'
+	script {
+                slackSend(channel: '#week-6-ip', message: "Build successful! :white_check_mark:")
+            }
         }
         failure {
             emailext attachLog: true, 
@@ -61,6 +64,10 @@ pipeline {
                     """,
                 subject: "Status: FAILURE -Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
                 to: 'mbuthiapetermbuthia@gmail.com'
+
+	script {
+                slackSend(channel: '#week-6-ip', message: "Build failed! :x:")
+            }
         }
 }
     
