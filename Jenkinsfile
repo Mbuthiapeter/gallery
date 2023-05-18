@@ -16,12 +16,12 @@ pipeline {
 	}
         stage ('Build project'){
             steps{
-                sh 'gradle build'
+                sh 'npm run build'
             }
         }
         stage ('Tests'){
             steps{
-                sh 'gradle test'
+                sh 'npm run test'
             }
         }
         stage('Deploy to Heroku') {
