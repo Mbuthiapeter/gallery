@@ -6,7 +6,7 @@ pipeline {
     stages{
         stage ('Clone Repository'){
             steps{
-                git "https://github.com/Mbuthiapeter/gallery.git"
+                git "https://github.com/Mbuthiapeter/gallery"
             }
         }
 	stage('Installing Dependencies'){
@@ -27,7 +27,7 @@ pipeline {
         stage('Deploy to Heroku') {
             steps {
                 withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
-                sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/stormy-fortress-37307.git master'
+                sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/desolate-sea-31450.git master'
             }
             }
         }
